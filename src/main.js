@@ -1,11 +1,11 @@
-import Vue from "vue";
-import App from "./App";
-import router, {asyncRouterMap} from "./router";
-import store from "./store";
-import fetch from "./utils/fetch";
-import logger from "./utils/logger";
-import NProgress from "nprogress";
-import "nprogress/nprogress.css";
+import Vue from 'vue'
+import App from './App'
+import router, { asyncRouterMap } from './router'
+import store from './store'
+import fetch from './utils/fetch'
+import logger from './utils/logger'
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 /* 设置vue全局变量 */
 Vue.prototype.$fetch = fetch
@@ -46,5 +46,5 @@ new Vue({
   router,
   store,
   template: '<App/>',
-  components: {App}
+  components: { App }
 })
