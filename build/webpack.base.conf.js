@@ -36,7 +36,7 @@ module.exports = {
       '@Page': resolve('src/pages'),
       '@Store': resolve('src/store'),
       '@Utils': resolve('src/utils'),
-      '@Api': resolve('src/api'),
+      '@Service': resolve('src/service'),
       '@Router': resolve('src/router')
     }
   },

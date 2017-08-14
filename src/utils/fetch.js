@@ -14,7 +14,6 @@ service.interceptors.request.use(config => {
 /*  if (store.getters.token) {
     config.headers['X-Token'] = getToken(); // 让每个请求携带token--['X-Token']为自定义key 请根据实际情况自行修改
   } */
-  logger.log(config)
   return config
 }, error => {
   // Do something with request error
@@ -25,24 +24,27 @@ service.interceptors.request.use(config => {
 // respone拦截器
 service.interceptors.response.use(
   response => {
-    logger.info('请求成功,请求目标：%s,请求源：%s',
+    logger.info('请求成功,请求地址：%s',
       response.config.url,
-      window.location.href,
       response.data)
     return response.data
   },
   error => {
-    const response = error.response || {}
-    logger.info('请求错误,请求目标：%s,请求源：%s',
+    const response = error.response
+    let errorMessage
+    logger.error('请求错误,请求地址：%s',
       error.config.url,
-      window.location.href,
-      error.response)
+      error)
+    if(response) {
+      errorMessage = response.data || { code: ErrorDic.SYSTEM_ERROR, message: '系统错误!' }
+    } else {
+      errorMessage = { code: ErrorDic.CONNECTION_TIMED_OUT, message: '请求超时!' }
+    }
 /*    Message({
       message: error.message,
       type: 'error',
       duration: 5 * 1000
     }); */
-    const errorMessage = response.data || { '0000': '系统错误' }
     return Promise.reject(errorMessage)
   }
 )

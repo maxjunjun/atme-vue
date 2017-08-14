@@ -3,7 +3,8 @@
  */
 
 const ErrorDic = {
-  SYSTEM_ERROR: '0000'
+  SYSTEM_ERROR: '0000',
+  CONNECTION_TIMED_OUT: '0001'
 }
 
 export default ErrorDic

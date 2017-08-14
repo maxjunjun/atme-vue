@@ -7,7 +7,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import { getConfig } from '@Api/demo'
+  import { getConfig } from '@Service/demo'
   export default {
     name: 'demo',
     data () {
