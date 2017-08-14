@@ -5,11 +5,6 @@ import _import from '../import'
 
 export default [{
   path: '/demo',
-  meta: {
-    icon: 'fa-building-o',
-    expanded: false,
-    label: 'Components'
-  },
   component: _import('demo', true),
   children: [
     // demo

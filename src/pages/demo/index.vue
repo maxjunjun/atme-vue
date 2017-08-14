@@ -1,6 +1,7 @@
 <template>
   <div>
     <div>{{user.name}} , welcome to atme-vue !</div>
+    <img src="../../assets/img/ctac.jpg"/>
     <router-view></router-view>
   </div>
 </template>
@@ -11,7 +12,7 @@
     name: 'demo',
     data () {
       return {
-        user: this.$store.state.user
+        user: this.$store.getters.user
       }
     },
     created () {

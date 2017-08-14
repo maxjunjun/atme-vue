@@ -12,7 +12,6 @@ Vue.prototype.$fetch = fetch
 Vue.prototype.$logger = logger
 
 router.beforeEach((to, from, next) => {
-  console.log(123123123123)
   NProgress.start() // 开启Progress
   if (store.getters.addMenus.length <= 0) {
     store.dispatch('setMenus', asyncRouterMap).then(() => { // 生成可访问的路由表

@@ -88,7 +88,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'manifest',
       chunks: ['vendor']
-    })
+    }),
     // copy custom static assets
     /* new CopyWebpackPlugin([
       {
