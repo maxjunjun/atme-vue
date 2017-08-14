@@ -1,0 +1,19 @@
+{
+  "presets": [
+    ["env", { "modules": false }],
+    "es2015",
+    "stage-0"
+  ],
+
+  "plugins": [
+    "add-module-exports",
+    "transform-runtime"
+    /*"transform-object-assign",*/
+    /*"transform-vue-jsx"*/
+  ],
+
+  "comments": false,
+
+  "env": {
+  }
+}
