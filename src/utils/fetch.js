@@ -1,6 +1,7 @@
 import axios from 'axios'
-import logger from './logger'
 import ErrorDic from '../constants/ErrorDic'
+
+const logger = new Logger('/utils/fetch')
 
 // 创建axios实例
 const service = axios.create({
@@ -32,7 +33,7 @@ service.interceptors.response.use(
   error => {
     const response = error.response
     let errorMessage
-    logger.error('请求错误,请求地址：%s',
+    logger.error('请求失败,请求地址：%s',
       error.config.url,
       error)
     if(response) {

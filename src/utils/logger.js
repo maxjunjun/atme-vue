@@ -4,27 +4,30 @@
 
 const DEBUG = process.env.DEBUG
 
-const logger = {
+ class Logger {
+   constructor(className = ''){
+     this.className = className
+   }
   info(param, ...params) {
     if (DEBUG) {
-      console.info(param, ...params, window.location.href)
+      console.info(param, ...params, "path: " + this.className)
     }
-  },
+  }
   warn(param, ...params) {
     if (DEBUG) {
-      console.warn(param, ...params, window.location.href)
+      console.warn(param, ...params, "path: "+ this.className)
     }
-  },
+  }
   error(param, ...params) {
     if (DEBUG) {
-      console.error(param, ...params, window.location.href)
+      console.error(param, ...params, "path: " + this.className)
     }
-  },
+  }
   log(param, ...params) {
     if (DEBUG) {
-      console.log(param, ...params, window.location.href)
+      console.log(param, ...params, "path: " + this.className)
     }
-  },
+  }
   alert(param) {
     if (DEBUG) {
       alert(param)
@@ -32,4 +35,6 @@ const logger = {
   }
 }
 
-export default logger
+window.Logger = window.Logger ||  Logger
+
+export default Logger

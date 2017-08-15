@@ -8,6 +8,7 @@
 
 <script type="text/ecmascript-6">
   import { getConfig } from '@Service/demo'
+  const logger = new Logger('/demo/index')
   export default {
     name: 'demo',
     data () {
@@ -18,9 +19,9 @@
     created () {
       this.$store.dispatch('setName', 'atme')
       getConfig({ type: '1', url: 'http://aaaa' }).then(data => {
-        this.$logger.info(this.$store.getters.user)
+        logger.info(this.$store.getters.user)
       }).catch(err => {
-        this.$logger.info(err)
+        logger.info(err)
       })
     }
   }

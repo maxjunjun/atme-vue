@@ -1,17 +1,15 @@
 /**
  * Created by majun on 2017/8/14.
  */
-import { constantRouterMap } from '@Router'
+import { constantRouterMap, authRouterMap } from '@Router'
 const menu = {
   state: {
-    menus: constantRouterMap,
-    addMenus: []
+    menus: authRouterMap,
   },
 
   mutations: {
     SET_MENUS: (state, menus) => {
       state.menus = constantRouterMap.concat(menus)
-      state.addMenus = menus
     }
   },
 
@@ -26,8 +24,7 @@ const menu = {
   },
 
   getters: {
-    menus: state => state.menus,
-    addMenus: state => state.addMenus
+    menus: state => state.menus
   }
 }
 

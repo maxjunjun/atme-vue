@@ -18,7 +18,8 @@ export const constantRouterMap = [
   { path: '/401', component: _import('demo', true), hidden: true }
 ]
 
-export const asyncRouterMap = [
+// 需要权限的路由
+export const authRouterMap = [
   ...demo
 ]
 
@@ -28,6 +29,7 @@ export default new Router({
   scrollBehavior: () => ({ y: 0 }),
   routes: [
     ...constantRouterMap,
+    ...authRouterMap
     // demo
     /*{
       path: '*',

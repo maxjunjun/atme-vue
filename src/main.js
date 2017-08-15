@@ -1,27 +1,18 @@
 import Vue from 'vue'
+import './utils/logger' // 日志
 import App from './App'
-import router, { asyncRouterMap } from './router'
+import router, { authRouterMap } from './router'
 import store from './store'
-import fetch from './utils/fetch'
-import logger from './utils/logger'
-import NProgress from 'nprogress'
+import fetch from './utils/fetch' // http请求
+import NProgress from 'nprogress' // 进度条
 import 'nprogress/nprogress.css'
 
 /* 设置vue全局变量 */
 Vue.prototype.$fetch = fetch
-Vue.prototype.$logger = logger
 
 router.beforeEach((to, from, next) => {
   NProgress.start() // 开启Progress
-  if (store.getters.addMenus.length <= 0) {
-    store.dispatch('setMenus', asyncRouterMap).then(() => { // 生成可访问的路由表
-      console.log(store.getters.addMenus)
-      router.addRoutes(store.getters.addMenus)
-      next({ ...to })
-    })
-  } else {
-    next()
-  }
+  next()
 })
 
 router.afterEach(() => {
@@ -35,7 +26,7 @@ Vue.config.productionTip = false
 // 生产环境错误日志
 if (process.env.NODE_ENV === 'production') {
   Vue.config.errorHandler = err => {
-    logger.error(err)
+    console.error(err)
   }
 }
 
