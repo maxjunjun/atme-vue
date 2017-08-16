@@ -1,14 +1,13 @@
 <template>
   <div>
     <div>{{user.name}} , welcome to atme-vue !</div>
-    <img src="../../assets/img/ctac.jpg"/>
     <router-view></router-view>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-  import { getConfig } from '@Service/demo'
-  const logger = new Logger('/demo/index')
+  import { getConfig } from '~service/demo'
+  const logger = new Logger('/system/about/index')
   export default {
     name: 'demo',
     data () {

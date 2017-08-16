@@ -6,7 +6,7 @@ module.exports = {
     index: path.resolve(__dirname, '../index.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: '',
     productionSourceMap: process.env.NODE_ENV !== 'production',
     productionGzip: false,
     productionGzipExtensions: ['js', 'css'],

@@ -12,7 +12,7 @@ module.exports = {
     app: './src/main.js',
     vendor: [
       'es6-promise/auto',
-      'babel-polyfill',
+/*      'babel-polyfill',*/
       'vue',
       'vue-router',
       'vuex'
@@ -21,7 +21,8 @@ module.exports = {
   },
   output: {
     path: config.build.assetsRoot,
-    filename: 'js/[name].js',
+    filename: utils.assetsPath('js/[name].js'),
+    chunkFilename: utils.assetsPath('js/[name].js'),
     publicPath: process.env.NODE_ENV !== 'development'
             ? config.build.assetsPublicPath : config.dev.assetsPublicPath
   },
@@ -30,14 +31,15 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.common.js',
       '@': resolve('src'),
-      '@Components': resolve('src/components'),
-      '@Constants': resolve('src/constants'),
-      '@Modules': resolve('src/modules'),
-      '@Page': resolve('src/pages'),
-      '@Store': resolve('src/store'),
-      '@Utils': resolve('src/utils'),
-      '@Service': resolve('src/service'),
-      '@Router': resolve('src/router')
+      '~components': resolve('src/components'),
+      '~constants': resolve('src/constants'),
+      '~modules': resolve('src/modules'),
+      '~pages': resolve('src/pages'),
+      '~store': resolve('src/store'),
+      '~utils': resolve('src/utils'),
+      '~service': resolve('src/service'),
+      '~router': resolve('src/router'),
+      '~layout': resolve('src/layout')
     }
   },
   module: {

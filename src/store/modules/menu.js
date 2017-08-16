@@ -1,7 +1,7 @@
 /**
  * Created by majun on 2017/8/14.
  */
-import { constantRouterMap, authRouterMap } from '@Router'
+import { constantRouterMap, authRouterMap } from '~router'
 const menu = {
   state: {
     menus: authRouterMap,

@@ -1,3 +1,5 @@
 // lazy loading Components
-export default (name, index = false) => () => import(`@Page/${name}${index ? '/index' : ''}.vue`)
+/*const loading = (name='', chunkName='',dependencies=[]) =>
+  r => require.ensure(dependencies, () => r(require(`${name}`)), `${chunkName}`)*/
+export default {}
 
