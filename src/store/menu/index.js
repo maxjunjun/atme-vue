@@ -2,13 +2,15 @@
  * Created by majun on 2017/8/14.
  */
 import { constantRouterMap, menuRouterMap } from '~router'
+import * as types from './mutations_types'
+
 const menu = {
   state: {
     menus: menuRouterMap,
   },
 
   mutations: {
-    SET_MENUS: (state, menus) => {
+    [types.SET_MENUS]: (state, menus) => {
       state.menus = constantRouterMap.concat(menus)
     }
   },

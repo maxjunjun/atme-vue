@@ -1,6 +1,7 @@
 <template>
   <div>
     <div>{{user.name}} , welcome to atme-vue !</div>
+    <img src="../../../assets/logo-sm.png">
     <router-view></router-view>
   </div>
 </template>
