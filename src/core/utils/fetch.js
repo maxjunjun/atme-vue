@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { ErrorDic } from '~constants'
 import Logger from './logger'
+import { Message } from 'element-ui'
 
 const logger = new Logger('/utils/fetch')
 
@@ -42,11 +43,11 @@ service.interceptors.response.use(
     } else {
       errorMessage = { code: ErrorDic.CONNECTION_TIMED_OUT, message: '请求超时!' }
     }
-/*    Message({
-      message: error.message,
+    Message({
+      message: errorMessage.message,
       type: 'error',
       duration: 5 * 1000
-    }); */
+    })
     return Promise.reject(errorMessage)
   }
 )
