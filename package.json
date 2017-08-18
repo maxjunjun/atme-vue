@@ -1,7 +1,7 @@
 {
-  "name": "vip-front",
+  "name": "atme-vue",
   "version": "1.0.0",
-  "description": "atme vip front",
+  "description": "atme-vue",
   "author": "majun",
   "private": true,
   "scripts": {
@@ -10,10 +10,6 @@
     "build-test": "cross-env NODE_ENV=test node build/build.js",
     "build-prod": "cross-env NODE_ENV=production node build/build.js",
     "analyz": "cross-env npm_config_report=true npm run build-prod",
-    "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
-    "e2e": "node test/e2e/runner.js",
-    "test": "npm run unit && npm run e2e",
-    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
     "check": "standard src/**/*.js src/**/*.vue"
   },
   "dependencies": {

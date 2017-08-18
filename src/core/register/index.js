@@ -2,7 +2,6 @@
  * Created by majun on 2017/5/11.
  */
 import Vue from 'vue'
-import _ from 'underscore'
 import libs from './lib'
 import cps from './component'
 import plugins from './plugin'
@@ -16,29 +15,29 @@ Vue.use({
     // Vue.mixin()
 
     //注册第三方库
-    _.each(libs, (item, key) => {
-      Vue.prototype[ '$' + key ] = item
+    Object.keys(libs).forEach(key => {
+      Vue.prototype[ '$' + key ] = libs[key]
     })
 
     //注册全局方法，如常用的接口方法，工具方法等。
-    _.each(plugins, (item, key) => {
-      Vue.prototype[ '$' + key ] = item
+    Object.keys(plugins).forEach(key => {
+      Vue.prototype[ '$' + key ] = plugins[key]
     })
   }
 })
 
 // 自定义组件
-_.each(cps, (item, key) => {
+Object.keys(cps).forEach(key => {
   var cp_name = key.replace(/([A-Z])/g, "-$1").toLowerCase()
   if (cp_name && cp_name[ 0 ] === '-') {
     cp_name = cp_name.replace('-', '')
   }
-  Vue.component(cp_name, item)
+  Vue.component(cp_name, cps[key])
 })
 
 // 自定义过滤器
-_.each(filters, (item, key) => {
-  Vue.filter(key, item)
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
 })
 
 
