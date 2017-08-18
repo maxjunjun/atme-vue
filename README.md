@@ -1,8 +1,6 @@
 # atme-vue
 采用vue2.0,vue-router,vuex,axios搭的一套vue脚手架，优点是项目结构清晰完善，可以直接用来当作企业开发框架
 
-**注意：该项目目前使用element-ui@1.4.1版本，所以最低兼容 Vue 2.3.0**
-
 ## 前言
 > 看过大多数开源的vue项目都是很简单的项目结构，只适合个人开发，所以自己搭了一套vue脚手架，能够胜任多人合作开发, 并且解决了开发，测试，正式环境构建的问题
 
@@ -37,23 +35,25 @@
 │   ├── apis                   // 所有请求
 │   ├── assets                 // 静态资源
 │   ├── components             // 全局公用组件
+│   ├── modules                // 业务组件
 │   ├── directive              // 全局指令
-│   ├── filtres                // 全局filter
+│   ├── filters                // 全局filter
 │   ├── mock                   // mock数据
 │   ├── router                 // 路由
 │   ├── store                  // 全局store管理
 │   ├── utils                  // 全局公用方法
 │   ├── pages                  // 视图
-|   ├── core                   // 核心内容
-|   |   ├── constants          // 常量
-|   |   ├── directive          // 指令
-|   |   ├── filter             // 过滤器 
-|   |   ├── layout             // 布局 
-|   |   ├── register           // 工具，组件，过滤器注册
-|   |   └── utils              // 工具类
+│   ├── service                // 业务逻辑
+│     ├── core                   // 核心内容
+│     │    ├── constants        // 常量
+│     │    ├── directive        // 指令
+│     │    ├── filter           // 过滤器 
+│     │    ├── layout           // 布局 
+│     │    ├── register         // 工具，组件，过滤器注册
+│     │    └── utils            // 工具类
 │   ├── App.vue                // 入口页面
 │   └── main.js                // 入口 加载组件 初始化等
-├── static                     // 第三方不打包资源
+├── static                        // 第三方不打包资源
 
 ├── .babelrc                   // babel-loader 配置
 ├── eslintrc.js                // eslint 配置项
