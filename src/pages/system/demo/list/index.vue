@@ -6,8 +6,8 @@
 </template>
 
 <script>
-    import ListJs from './list.js';
-    export default ListJs;
+    import ListJs from './list.js'
+    export default ListJs
 </script>
 <style lang='scss'>
 </style>

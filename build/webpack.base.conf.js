@@ -40,7 +40,8 @@ module.exports = {
       '~service': resolve('src/service'),
       '~router': resolve('src/router'),
       '~layout': resolve('src/core/layout'),
-      '~api': resolve('src/api')
+      '~api': resolve('src/api'),
+      '~filter': resolve('src/core/filter')
     }
   },
   module: {

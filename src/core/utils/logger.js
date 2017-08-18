@@ -10,22 +10,22 @@ const DEBUG = process.env.DEBUG
    }
   info(param, ...params) {
     if (DEBUG) {
-      console.info(param, ...params, "path: " + this.className)
+      console.info(param, ...params, "output: " + this.className)
     }
   }
   warn(param, ...params) {
     if (DEBUG) {
-      console.warn(param, ...params, "path: "+ this.className)
+      console.warn(param, ...params, "output: "+ this.className)
     }
   }
   error(param, ...params) {
     if (DEBUG) {
-      console.error(param, ...params, "path: " + this.className)
+      console.error(param, ...params, "output: " + this.className)
     }
   }
   log(param, ...params) {
     if (DEBUG) {
-      console.log(param, ...params, "path: " + this.className)
+      console.log(param, ...params, "output: " + this.className)
     }
   }
   alert(param) {

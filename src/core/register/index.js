@@ -6,6 +6,7 @@ import _ from 'underscore'
 import libs from './lib'
 import cps from './component'
 import plugins from './plugin'
+import filters from '~filter'
 
 /**
  * 把一些全局对象和一些全局方法，注册到Vue原型上
@@ -24,16 +25,20 @@ Vue.use({
       Vue.prototype[ '$' + key ] = item
     })
   }
-});
+})
 
-
+// 自定义组件
 _.each(cps, (item, key) => {
   var cp_name = key.replace(/([A-Z])/g, "-$1").toLowerCase()
   if (cp_name && cp_name[ 0 ] === '-') {
     cp_name = cp_name.replace('-', '')
   }
   Vue.component(cp_name, item)
-});
+})
 
+// 自定义过滤器
+_.each(filters, (item, key) => {
+  Vue.filter(key, item)
+})
 
 
