@@ -1,5 +1,6 @@
 import axios from 'axios'
-import ErrorDic from '../constants/ErrorDic'
+import { ErrorDic } from '~constants'
+import Logger from './logger'
 
 const logger = new Logger('/utils/fetch')
 

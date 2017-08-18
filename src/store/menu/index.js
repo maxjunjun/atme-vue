@@ -1,10 +1,10 @@
 /**
  * Created by majun on 2017/8/14.
  */
-import { constantRouterMap, authRouterMap } from '~router'
+import { constantRouterMap, menuRouterMap } from '~router'
 const menu = {
   state: {
-    menus: authRouterMap,
+    menus: menuRouterMap,
   },
 
   mutations: {

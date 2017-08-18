@@ -1,14 +1,20 @@
 import Vue from 'vue'
-import './utils/logger' // 日志
+
+import { Logger } from './utils' // 日志
 import App from './App'
-import router, { authRouterMap } from './router'
+import router, { menuRouterMap } from './router'
 import store from './store'
-import fetch from './utils/fetch' // http请求
 import NProgress from 'nprogress' // 进度条
 import 'nprogress/nprogress.css'
 
-/* 设置vue全局变量 */
-Vue.prototype.$fetch = fetch
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-default/index.css'
+
+import './register'
+Vue.use(ElementUI)
+window.Logger =  Logger
+
+console.info(menuRouterMap)
 
 router.beforeEach((to, from, next) => {
   NProgress.start() // 开启Progress

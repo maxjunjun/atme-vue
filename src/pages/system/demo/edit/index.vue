@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div demo="123123">
         edit!!!!!!!!
     </div>
 </template>

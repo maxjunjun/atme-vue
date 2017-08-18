@@ -39,7 +39,8 @@ module.exports = {
       '~utils': resolve('src/utils'),
       '~service': resolve('src/service'),
       '~router': resolve('src/router'),
-      '~layout': resolve('src/layout')
+      '~layout': resolve('src/layout'),
+      '~api': resolve('src/api')
     }
   },
   module: {

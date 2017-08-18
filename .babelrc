@@ -7,7 +7,13 @@
 
   "plugins": [
     "add-module-exports",
-    "transform-runtime"
+    "transform-runtime",
+    ["component", [
+      {
+        "libraryName": "element-ui",
+        "styleLibraryName": "theme-default"
+      }
+    ]]
     /*"transform-object-assign",*/
     /*"transform-vue-jsx"*/
   ],

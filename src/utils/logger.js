@@ -35,6 +35,4 @@ const DEBUG = process.env.DEBUG
   }
 }
 
-window.Logger = window.Logger ||  Logger
-
 export default Logger
