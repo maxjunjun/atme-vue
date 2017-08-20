@@ -6,6 +6,7 @@ import libs from './lib'
 import cps from './component'
 import plugins from './plugin'
 import filters from '~filter'
+import directives from '~directive'
 
 /**
  * 把一些全局对象和一些全局方法，注册到Vue原型上
@@ -40,4 +41,8 @@ Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })
 
+// 自定义指令
+Object.keys(directives).forEach(key => {
+  Vue.directive(key, directives[key])
+})
 

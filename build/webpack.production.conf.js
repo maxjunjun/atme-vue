@@ -17,7 +17,6 @@ function resolveApp (relativePath) {
   return path.resolve(relativePath)
 }
 
-console.log(`package for ${process.env.NODE_ENV}...`)
 var webpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({

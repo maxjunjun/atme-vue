@@ -2,8 +2,8 @@
  * Created by majun on 2017/6/20.
  */
 
-import wangeditorContent from './wangeditor';
+import * as demo from './demo'
 
-export {
-	wangeditorContent
-};
+export default {
+	...demo
+}

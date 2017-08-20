@@ -21,10 +21,10 @@
 ## 发布
 ```bash
     # 构建测试环境
-    npm run build-test
+    npm run build:test
 
     # 构建生成环境
-    npm run build-prod
+    npm run build:prod
 ```
 
 ## 目录结构

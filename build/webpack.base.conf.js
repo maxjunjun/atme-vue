@@ -41,7 +41,8 @@ module.exports = {
       '~router': resolve('src/router'),
       '~layout': resolve('src/core/layout'),
       '~api': resolve('src/api'),
-      '~filter': resolve('src/core/filter')
+      '~filter': resolve('src/core/filter'),
+      '~directive': resolve('src/core/directive')
     }
   },
   module: {
