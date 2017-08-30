@@ -60,6 +60,70 @@
 
 ```
 
+## 规范
+```bash
+    # config文件夹
+    config文件夹是用来配置不同环境的配置文件，目前有BASE_API（api请求前缀），DEBUG（debug模式）,
+    使用：process.env.DEBUG
+
+    # 模块导出
+    components,modules,pages,router,store下的所有模块都要放在单独文件夹内，每个文件夹下
+    的模块统一通过index.js导出，最后在当前模块所在目录下的index.js对外暴露。
+
+    # 模块导入
+    模块引用时都要从根目录下导入，例如：import { DialogInfo } from '~components'，
+    在文件夹名前加上'~'可以直接定位到该文件夹
+
+    # components模块
+    components是用来放共通组件，和业务逻辑没有关系，每个组件要放在一个单独的文件夹下，
+    文件夹名称为英文字母，全部小写，多个用‘-’隔开，例如“select-tree”，导出的key必须是大写驼峰，
+    注册之后，就变成了小写中横线;如果想要注册到vue的全局组件中，可以在src/core/register/component.js
+    里面添加对应的组件。
+
+    # modules模块
+    modules是用来放业务组件，带有业务逻辑并且可以复用的组件，其他规范和components一致。
+
+    # pages模块
+    pages是页面模块，每个页面模块的路径要和页面路由一致。每个页面导出时使用异步导出，
+    例如：const Edit = r => require.ensure([], () => r(require('./edit')), 'demo')，
+    其中第三个参数是代码分割后的js文件名称，要按照模块的名字来命名，如果多个模块指定同一个名称，
+    那么会被打包到同一个js文件里；对于比较长的vue文件，要把vue拆成js，css，vue三个文件。
+
+    # router模块
+    路由模块分为constant和menu，constant是用放置一些系统必须的路由，这些路由不需要权限验证，如登录，404
+    menu是用来放置系统菜单的路由，这些路由会涉及到权限验证，路由需要按照功能模块分割，相同模块的路由放在
+    同一个文件夹下；每个路由都要有name属性，按照模块来命名，用name来做路由查找。
+
+    # store模块
+    store下用来放vuex文件，每个模块的vuex文件放在单独的文件夹下，如果文件特别大，要把state，
+    actions等分成多个文件。
+
+    # api模块
+    api用来放api请求，要按照功能模块划分成多个文件。
+
+    # service模块
+    业务逻辑处理模块，对于一些需要多个api或者需要对api进行比较复杂的处理的情况下，要把逻辑写在service中，
+    同样按照功能模块划分。
+
+    # 在vue实例中使用http请求
+    this.$fetch.get('/').then(data => {
+      ...
+    })
+
+    # logger的使用
+    // 初始化
+    const logger = new Logger('/system/about/index') //参数为当前文件的路径
+
+    // 使用
+    logger.info(data)
+    logger.error(data)
+    logger.log(data)
+    如果想要关闭logger，可以将配置文件的DEBUG设置为false
+
+     # 获取路由地址
+     const url = this.$routerUtil.getPath('demo-edit') //参数为路由的name
+```
+
 ## License
 
 MIT
