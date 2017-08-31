@@ -56,7 +56,9 @@ export default {
       this.shouldExpandMatchItem(route)
     } */
   },
-  created: () => this.load(),
+  created() {
+    this.load()
+  },
   methods: {
     handleSelect() {
       if (this.device.isMobile) {
