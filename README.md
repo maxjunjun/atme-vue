@@ -64,7 +64,7 @@
 ```bash
     # config文件夹
     config文件夹是用来配置不同环境的配置文件，目前有BASE_API（api请求前缀），DEBUG（debug模式）,
-    使用：process.env.DEBUG
+    TIME_OUT（请求超时时间，-1：表示不设置），使用方法：process.env.DEBUG
 
     # 模块导出
     components,modules,pages,router,store下的所有模块都要放在单独文件夹内，每个文件夹下
