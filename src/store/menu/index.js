@@ -1,12 +1,12 @@
 /**
  * Created by majun on 2017/8/14.
  */
-import { constantRouterMap, menuRouterMap } from '~router'
+import { constantRouterMap, pathMap } from '~router'
 import * as types from './mutations_types'
 
 const menu = {
   state: {
-    menus: menuRouterMap,
+    paths: pathMap,
     menuList: [
       {
         id: 1,
@@ -38,7 +38,8 @@ const menu = {
   },
 
   getters: {
-    menuList: state => state.menuList
+    menuList: state => state.menuList,
+    paths: state => state.paths
   }
 }
 

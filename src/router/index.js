@@ -12,14 +12,28 @@ export default new Router({
   scrollBehavior: () => ({ y: 0 }),
   routes: [
     ...constantRouterMap,
-    ...menuRouterMap
-    // demo
-    /* {
+    ...menuRouterMap,
+    {
       path: '*',
       redirect: '/'
-    } */
+    }
   ]
 })
 
-export { menuRouterMap, constantRouterMap }
+const pathMap = {}
+
+function renderRouter(routers, path = '') {
+  routers.forEach(item => {
+    const newPath = path + '/' + item.path.replace('/', '')
+    const children = item.children
+    if (children) {
+      renderRouter(item.children, newPath)
+    } else {
+      pathMap[ item.code ] = newPath
+    }
+  })
+}
+renderRouter(menuRouterMap)
+
+export { menuRouterMap, constantRouterMap, pathMap }
 

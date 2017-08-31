@@ -92,7 +92,8 @@
     # router模块
     路由模块分为constant和menu，constant是用放置一些系统必须的路由，这些路由不需要权限验证，如登录，404
     menu是用来放置系统菜单的路由，这些路由会涉及到权限验证，路由需要按照功能模块分割，相同模块的路由放在
-    同一个文件夹下；每个路由都要有name属性，按照模块来命名，用name来做路由查找。
+    同一个文件夹下；每个路由都要有name和code属性，按照模块来命名，name可以是中文，code是英文，
+    用code可以用来查找路由。
 
     # store模块
     store下用来放vuex文件，每个模块的vuex文件放在单独的文件夹下，如果文件特别大，要把state，
@@ -121,7 +122,7 @@
     如果想要关闭logger，可以将配置文件的DEBUG设置为false
 
      # 获取路由地址
-     const url = this.$routerUtil.getPath('demo-edit') //参数为路由的name
+    const url = this.$store.getters.paths['demo-edit'] // 获取demo-edit的url地址
 ```
 
 ## License

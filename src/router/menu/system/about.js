@@ -6,5 +6,6 @@ import { System } from '~pages'
 export default {
   path: 'about',
   name: 'about',
+  code: 'about',
   component: System.About
 }

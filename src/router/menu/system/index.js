@@ -9,7 +9,8 @@ import About from './about'
 export default {
   path: '/system',
   name: '系统管理',
+  code: 'system',
   component: Home,
   redirect: '/system/demo',
   children: [Demo, About]
-};
+}
