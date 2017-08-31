@@ -5,17 +5,17 @@ import { authService } from '~service'
 const logger = new Logger('/system/about/index')
 export default {
   name: 'demo',
-  data () {
+  data() {
     return {
       number: 20.24444
     }
   },
   computed: {
-    user () {
+    user() {
       return this.$store.getters.getUserinfo
     }
   },
-  created () {
+  created() {
     // store
     this.$store.dispatch('update_userinfo', { name: 'atme' }).then(() => {
       // this.user = this.$store.state.user.userinfo
@@ -35,8 +35,8 @@ export default {
 
     // 获取url地址
     const url = this.$routerUtil.getPath('demo-edit')
-    
+
     // 日志
-    logger.info('demo编辑页面地址为：',url)
+    logger.info('demo编辑页面地址为：', url)
   }
 }

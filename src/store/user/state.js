@@ -3,8 +3,7 @@
  */
 
 export default {
-	//登录成功后的用户信息
-	userinfo: {
+  userinfo: {
     name: ''
-  },
+  }
 }

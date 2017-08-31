@@ -14,10 +14,10 @@ export default new Router({
     ...constantRouterMap,
     ...menuRouterMap
     // demo
-    /*{
+    /* {
       path: '*',
       redirect: '/'
-    }*/
+    } */
   ]
 })
 

@@ -1,16 +1,15 @@
 import Vue from 'vue'
 import App from './App'
-import router, { menuRouterMap } from '~router'
+import router from '~router'
 import store from '~store'
 import NProgress from 'nprogress' // 进度条
 import 'nprogress/nprogress.css'
 import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-default/index.css'
 import { Logger } from '~utils' // 日志
 import './core/register'
 
 Vue.use(ElementUI)
-window.Logger =  Logger
+window.Logger = Logger
 
 router.beforeEach((to, from, next) => {
   NProgress.start() // 开启Progress

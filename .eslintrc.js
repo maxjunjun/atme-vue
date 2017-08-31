@@ -108,7 +108,7 @@ module.exports = {
     'no-throw-literal': 'error',
 
     // disallow unused expressions
-    'no-unused-expressions': 'error',
+    'no-unused-expressions': 'off',
 
     // disallow unnecessary calls to .call() and .apply()
     'no-useless-call': 'error',
@@ -171,7 +171,7 @@ module.exports = {
     'comma-style': 'error',
 
     // enforce consistent spacing inside computed property brackets
-    'computed-property-spacing': 'error',
+    'computed-property-spacing': 'off',
 
     // require or disallow spacing between function identifiers and their invocations
     'func-call-spacing': 'error',
@@ -262,7 +262,7 @@ module.exports = {
      */
 
     // require braces around arrow function bodies
-    'arrow-body-style': 'error',
+    'arrow-body-style': 'off',
 
     // require parentheses around arrow function arguments
     'arrow-parens': ['error', 'as-needed'],
@@ -289,13 +289,13 @@ module.exports = {
     'no-var': 'error',
 
     // require or disallow method and property shorthand syntax for object literals
-    'object-shorthand': 'error',
+    'object-shorthand': 'off',
 
     // require arrow functions as callbacks
     'prefer-arrow-callback': 'error',
 
     // require const declarations for variables that are never reassigned after declared
-    'prefer-const': 'error',
+    'prefer-const': 'off',
 
     // disallow parseInt() in favor of binary, octal, and hexadecimal literals
     'prefer-numeric-literals': 'error',

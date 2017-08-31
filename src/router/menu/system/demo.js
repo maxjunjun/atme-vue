@@ -12,10 +12,10 @@ export default {
   children: [{
     path: 'list',
     name: 'demo-list',
-    component:  System.Demo.List
+    component: System.Demo.List
   }, {
     path: 'edit',
     name: 'demo-edit',
-    component:  System.Demo.Edit
+    component: System.Demo.Edit
   }]
 }

@@ -3,7 +3,7 @@
  */
 
 export default {
-	getUserinfo(state) {
-		return state.userinfo
-	}
-};
+  getUserinfo(state) {
+    return state.userinfo
+  }
+}

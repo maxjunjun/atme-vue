@@ -7,11 +7,23 @@ import * as types from './mutations_types'
 const menu = {
   state: {
     menus: menuRouterMap,
+    menuList: [
+      {
+        id: 1,
+        parentId: null,
+        sort: 0,
+        name: '仪表盘',
+        href: '/index',
+        icon: 'fa fa-dashboard',
+        children: [],
+        isShow: '1'
+      }
+    ]
   },
 
   mutations: {
     [types.SET_MENUS]: (state, menus) => {
-      state.menus = constantRouterMap.concat(menus)
+      state.menuList = constantRouterMap.concat(menus)
     }
   },
 
@@ -26,7 +38,7 @@ const menu = {
   },
 
   getters: {
-    menus: state => state.menus
+    menuList: state => state.menuList
   }
 }
 

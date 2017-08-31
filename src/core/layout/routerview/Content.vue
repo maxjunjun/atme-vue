@@ -3,20 +3,20 @@
     <router-view></router-view>
   </transition>
 </template>
-<script>
-    export default {
-        name: 'content'
-    }
+<script type="text/ecmascript-6">
+  export default {
+    name: 'content'
+  }
 </script>
 
-<style lang='scss'>
-    .fade-enter-active,
-    .fade-leave-active {
-        transition: opacity .3s
-    }
+<style>
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity .3s
+  }
 
-    .fade-enter,
-    .fade-leave-active {
-        opacity: 0
-    }
+  .fade-enter,
+  .fade-leave-active {
+    opacity: 0
+  }
 </style>

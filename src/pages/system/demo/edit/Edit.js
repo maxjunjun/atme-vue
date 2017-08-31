@@ -1,3 +1,3 @@
 export default {
-    name: 'system-demo-edit'
+  name: 'system-demo-edit'
 }

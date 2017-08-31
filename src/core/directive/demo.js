@@ -3,8 +3,7 @@
  */
 
 export const demo = {
-  bind: function (el, binding, vnode) {
-    var s = JSON.stringify
-    console.log(el)
+  bind: (el, binding, vnode) => {
+    console.log(el, binding, vnode)
   }
 }

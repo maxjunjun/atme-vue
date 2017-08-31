@@ -1,5 +1,5 @@
-import DialogInfo from './dialog-info'
+import SelectTree from './select-tree'
 
-export {
-	DialogInfo
+export default {
+  SelectTree
 }

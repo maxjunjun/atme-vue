@@ -1,0 +1,60 @@
+
+.showSlide {
+    animation-duration: .2s;
+    animation-name: slideInLeft;
+}
+
+.hideSlide {
+    animation-duration: .2s;
+    animation-name: slideOutLeft;
+}
+
+.main-sidebar {
+    background-color: #324157;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    bottom: 0;
+    height: calc(100vh - 50px);
+    width: 44px;
+    z-index: 810;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out, width 0.3s ease-in-out;
+    -moz-transition: -moz-transform 0.3s ease-in-out, width 0.3s ease-in-out;
+    -o-transition: -o-transform 0.3s ease-in-out, width 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+
+.expandSide {
+    width: 230px;
+}
+
+.el-menu-vertical-demo .el-submenu .el-menu-item {
+    height: 45px;
+    line-height: 45px;
+}
+
+.el-menu-vertical-demo .el-menu-item, .el-menu-vertical-demo .el-submenu__title {
+    height: 45px;
+    line-height: 45px;
+}
+
+.main-sidebar .el-menu--collapse {
+    width: 44px;
+}
+
+.main-sidebar .el-menu--collapse>.el-menu-item, .el-menu--collapse>.el-submenu>.el-submenu__title {
+    padding-left: 13px !important;
+}
+
+.vue-scrollbar{
+    background-color: #324157 !important;
+    height: calc(100vh - 50px)
+}
+
+.vue-scrollbar__scrollbar-vertical .scrollbar, .vue-scrollbar__scrollbar-horizontal .scrollbar{
+    background: none !important;
+}
+
+.sidebar{
+    min-height: 450px;
+}

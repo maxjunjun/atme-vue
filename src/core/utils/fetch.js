@@ -12,17 +12,12 @@ const service = axios.create({
 })
 
 // request拦截器
-service.interceptors.request.use(config => {
-  // Do something before request is sent
-/*  if (store.getters.token) {
-    config.headers['X-Token'] = getToken(); // 让每个请求携带token--['X-Token']为自定义key 请根据实际情况自行修改
-  } */
-  return config
-}, error => {
-  // Do something with request error
-  logger.log(error) // for debug
-  Promise.reject(error)
-})
+service.interceptors.request.use(config => config
+  , error => {
+    // Do something with request error
+    logger.log(error) // for debug
+    Promise.reject(error)
+  })
 
 // respone拦截器
 service.interceptors.response.use(
@@ -38,7 +33,7 @@ service.interceptors.response.use(
     logger.error('请求失败,请求地址：%s',
       error.config.url,
       error)
-    if(response) {
+    if (response) {
       errorMessage = response.data || { code: ErrorDic.SYSTEM_ERROR, message: '系统错误!' }
     } else {
       errorMessage = { code: ErrorDic.CONNECTION_TIMED_OUT, message: '请求超时!' }
@@ -54,36 +49,28 @@ service.interceptors.response.use(
 
 const fetch = service
 
-fetch.get = (url, params = {}) => {
-  return service({
-    url: url,
-    method: 'get',
-    params: params
-  })
-}
+fetch.get = (url, params = {}) => service({
+  url,
+  method: 'get',
+  params
+})
 
-fetch.post = (url, params = {}) => {
-  return service({
-    url: url,
-    method: 'post',
-    data: params
-  })
-}
+fetch.post = (url, params = {}) => service({
+  url,
+  method: 'post',
+  data: params
+})
 
-fetch.put = (url, params = {}) => {
-  return service({
-    url: url,
-    method: 'put',
-    data: params
-  })
-}
+fetch.put = (url, params = {}) => service({
+  url,
+  method: 'put',
+  data: params
+})
 
-fetch.delete = (url, params = {}) => {
-  return service({
-    url: url,
-    method: 'delete',
-    data: params
-  })
-}
+fetch.delete = (url, params = {}) => service({
+  url,
+  method: 'delete',
+  data: params
+})
 
 export default fetch

@@ -4,5 +4,5 @@
 import { fetch } from '~utils'
 
 export const getConfig = param => {
-  return fetch.get('/auth/config',param)
+  return fetch.get('/auth/config', param)
 }

@@ -4,5 +4,5 @@
 import { fetch } from '~utils'
 
 export const getConfig = param => {
-  return fetch.post('/project/add',param)
+  return fetch.post('/project/add', param)
 }

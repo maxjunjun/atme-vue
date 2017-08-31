@@ -1,7 +1,7 @@
 /**
  * Created by majun on 2017/8/15.
  */
-import { Content, Home } from '~layout'
+import { Home } from '~layout'
 
 import Demo from './demo'
 import About from './about'
@@ -11,5 +11,5 @@ export default {
   name: '系统管理',
   component: Home,
   redirect: '/system/demo',
-  children:[ Demo, About ]
+  children: [Demo, About]
 };
