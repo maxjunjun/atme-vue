@@ -22,9 +22,9 @@ export default {
     })
 
     // 请求
-    this.$fetch.get('/').then(data => {
-      logger.info(data)
-    })
+    // this.$fetch.get('https://www.baidu.com').then(data => {
+    //   logger.info(data)
+    // })
 
     // 服务
     authService.getConfig({ type: '1', url: 'http://aaaa' }).then(data => {
