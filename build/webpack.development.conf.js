@@ -8,15 +8,17 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 
 // add hot-reload related code to entry chunks
-Object.keys(baseWebpackConfig.entry).forEach(function (name) {
-  baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
-})
+if(process.argv[1].indexOf('dev-server.js') >= 0) {
+  console.log('load dev-client')
+  Object.keys(baseWebpackConfig.entry).forEach(function (name) {
+    baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
+  })
+}
 
 function resolveApp (relativePath) {
   return path.resolve(relativePath)
 }
 
-console.log('package for  development...')
 module.exports = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })

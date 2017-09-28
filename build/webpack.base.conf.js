@@ -12,7 +12,7 @@ module.exports = {
     app: './src/main.js',
     vendor: [
       'es6-promise/auto',
-      /*      'babel-polyfill',*/
+      'babel-polyfill',
       'vue',
       'vue-router',
       'vuex'
